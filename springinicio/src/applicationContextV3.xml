@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	
+    <!-- Define your beans here -->
+    
+    <!-- define the dependency -->
+    <bean id="miDiaSuerte"  
+    		class="com.luv2code.springdemov3.SadFortuneService">
+    	</bean><!-- Inyecta en mmemoria el id de mi dia de suerte  en el sadfortuneservice -->
+	<!--El bena define al inyector para construir -->
+    <!--Busca los valores de mi dia de suerte en donde la class es la ubicacion de los archivos-->
+ 	<bean id="myCoach"
+ 		class="com.luv2code.springdemov3.BaseballCoach">
+
+
+ 		<!--Busca los valores de mi dia de suerte en donde la class es la ubicacion de los archivos-->
+ 		
+ 		<!-- set up constructor injection -->
+ 		<constructor-arg ref="miDiaSuerte" /><!-- asignalo por constructr --><!-- inyecta en  constructor-->
+ 	</bean>
+    
+</beans>
+
+
+
+
+
